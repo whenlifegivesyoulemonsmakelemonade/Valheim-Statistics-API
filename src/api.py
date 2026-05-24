@@ -248,7 +248,7 @@ if __name__ == '__main__':
 
 @app.route('/', methods=['GET'])
 def get_server_stats():
-    dataServer = {"playerCount": Player.count(), "steamIDs": [player.steamID for player in Player.getAll()]}
+    dataServer = {"playerCount": Player.count(), "steamIDs": [player.steamID for player in Player.getAll()]}                # dataServer set here
     return dataServer
 
 @app.route('/<steamID>', methods=['GET'])
@@ -285,7 +285,7 @@ def graceful_shutdown(signum, frame):
     parse_thread.join()
     # pullRequest all for writing to Save File on shutdown
     get_server_stats()
-    data = {"server": {dataServer}, "players": [player.pullRequest() for player in Player.getAll()]}
+    data = {"server": {dataServer}, "players": [player.pullRequest() for player in Player.getAll()]}                    # dataServer used here in shutdown
     writeJson(statsFilePath, data)
 
     print("StatusAPI: Shutdown complete.")

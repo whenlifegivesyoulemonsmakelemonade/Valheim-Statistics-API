@@ -1,1 +1,9 @@
-
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: valheimStats
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./src/Website/:/usr/share/nginx/html
