@@ -1,0 +1,13 @@
+# Python-generated files
+__pycache__/** linguist-vendored
+*.py[oc] linguist-vendored
+build/** linguist-vendored
+dist/** linguist-vendored
+wheels/** linguist-vendored
+*.egg-info linguist-vendored
+
+# Virtual environments
+.venv/** linguist-vendored
+
+
+.vscode/** linguist-vendored
